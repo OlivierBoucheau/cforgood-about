@@ -1,5 +1,6 @@
 body{
 	margin: 0;
+	font-family: 'raleway', sans-serif;
 }
 
 header{
@@ -47,12 +48,36 @@ a{
 #imageHeader{
 	width: 100%;
 	height: 450px;
-	padding-top: 80px;
+	padding-top: 60px;
 }
 
 #imageHeader img{
 	width: 100%;
 	height: auto;
+}
+
+.banniere{
+	background: url("../images/placeit-1.jpg") no-repeat;
+	height: 450px;
+	background-size: contain;
+}
+
+.banniere h1{
+	font-size: 3em;
+	font-weight: 100;
+}
+
+.banniere h2{
+	font-size: 2em;
+	font-weight: 100;
+}
+
+.banniere .blocTitre{
+	position: relative;
+	text-align: center;
+	top: 40%;
+	color: white;
+	text-shadow: 3px 2px 2px black;
 }
 
 #container{
@@ -61,41 +86,87 @@ a{
 	justify-content: space-around;
 	position: relative;
 	z-index: 1;
+	margin-top: 70px;
 }
 
 aside{
 	width: 20%;
 	height: 230px;
-	margin: 10px;
+	margin: 70px 0;
 }
 
 aside a{
+	display: block;
 	line-height: 3;
+	font-weight: 600;
+	padding: 5px 0 5px 15px;
+ 	background-color: rgba(54, 211, 218,0);
+ 	 -webkit-transition: border 500ms ease;
+  -moz-transition: background-color 500ms ease;
+  -ms-transition: background-color 500ms ease;
+  -o-transition: background-color 500ms ease;
+  transition: background-color 500ms ease; 
+}
+
+aside a:hover{
+	background-color: rgba(54, 211, 218, 1);
+	color: white;
+	opacity: 1;
+}
+
+aside li:active{
+	border-left: 5px solid #f55b5b;
+	color: white;
 }
 
 aside ul{
-	background-color: #36d3da;
 	width: 93%;
 	margin-top: 0;
 }
 
 section{
 	width: 75%;
-	background-color: #36d3da;
 	margin: 10px;
 }
-section h1{
+section h3{
 	text-align: center;
+	font-size: 2em;
+	font-weight: 100;
+	margin-bottom: 50px;
+}
+
+section h4{
+	font-size: 20px;
+	font-weight: 100;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 150px;
+    border-bottom: 3px solid #36d3da;
 }
 
 section p{
-	width: 90%;
-	margin: 10px auto 20px;
+	width: 75%;
+	margin: 10px auto 100px;
+	font-family: 'bariol_boldbold', sans-serif;
+	font-size: 16px;
+	text-align: left;
+	font-weight: 100;
+	line-height: 24px;
 }
 
+#video-about{
+	text-align: center;
+}
 
 .affix-subnav-scrolled{
-	top: 88px;
+	top: 140px;
 	margin-bottom: -310px;
 	position: fixed;
 	width: 18.6%;
