@@ -6,6 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet/reset.css">
 	<link rel="stylesheet" type="text/css" href="stylesheet/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 
@@ -28,7 +31,7 @@
 			</nav>
 
 			<div id="imageHeader">
-				<div class="banniere">
+				<div class="banniere-about banniere">
 					<div class="blocTitre">
 						<h1>A PROPOS</h1>
 						<H2> EN APPRENDRE UN PEU PLUS SUR NOUS</H2>
@@ -41,15 +44,29 @@
 	<div id="container">
 
 		<aside>
-			<ul id="affix-subnav">
-				<li><a href="about.html">A PROPOS</a></li>
-				<li><a href="#">NOTRE CHARTE</a></li>
-				<li><a href="#">FAQ</a></li>
-				<li><a href="#">CONTACT</a></li>
+			<ul id="affix-subnav" class="dropdown">
+				<li><a href="about.html" class="active">A PROPOS</a></li>
+				<li><a href="charte.html">NOTRE CHARTE</a></li>
+				<li><a href="faq.html">FAQ</a></li>
 			</ul>
+
+		<div class="menuMobile">	
+ 			 <section id="content">
+ 			 	<div class="center">
+				    <div class="dropdown">
+				      <div class="title dropdown-text">A PROPOS</div>
+				      <ul class="menu-open">
+				        <li><a href="charte.html"></a>NOTRE CHARTE</li>
+				        <li><a href="charte.html"></a>FAQ</li>
+				      </ul>
+				    </div>
+			    </div>
+			 </section>
+		</div>
+
 		</aside>
 
-		<section>
+		<section class="section-contenu">
 			<h3 class="section-title text-center">NOTRE VISION</h3>
           	<h4 class="section-subtitle text-center">Un monde en quête de sens</h4>
          	<p>
@@ -91,11 +108,37 @@
 		
 
 			$(window).scroll(function() {
-			    if( $(this).scrollTop() > 510 ) {
+			    if( $(this).scrollTop() > 500 ) {
 			      $("#affix-subnav").addClass('affix-subnav-scrolled');
+			      $("#dropdown").addClass('affix-dropdown-scrolled');
+			    
 			    } else {
 			      $("#affix-subnav").removeClass('affix-subnav-scrolled');
+			      $("#dropdown").removeClass('affix-dropdown-scrolled');
+	
+			    }
+			  });
+
+			$(window).scroll(function() {
+				 if( $(this).scrollTop() > 450 ) {
+			      $("#content").addClass('affix-content-scrolled');
+			    } else {
+			      $("#content").removeClass('affix-content-scrolled');
 			    }
 			  });
 	</script>
+
+	  <script type="text/javascript">
+			  	$(".title").click(function () {
+			  $('.menu-open').toggleClass("open");
+			});
+
+			  	$("li").click(function () {
+			  $('.menu-open').toggleClass("open");
+			});
+
+			$(".dropdown li").click(function () {
+			  $(this).parent().parent().find(".title").text($(this).text());
+			});
+  </script>
 </body>
